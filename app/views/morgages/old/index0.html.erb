@@ -1,0 +1,68 @@
+ <div class="new-invoice-table-holder main-invoice page-box">
+      <table class="bordered grid-view">
+        <thead>
+        <tr>
+          <th class="align_center header align_center center-align not-sortable td-checkbox checkbox-item check_all_behaviour">
+            <div class="">
+              <div class="checkbox-item invoice_checkbox">
+                <%= check_box_tag 'select_all', 1, false, class: 'fix-left-and-opacity check_all filled-in checked-invoice hidden', title: 'Select All', id: 'select_all_items' %>
+                <label for="<%= "select_all_items" %>"></label>
+              </div>
+            </div>
+
+
+  
+ 
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th>Lastname</th>
+      <th>Dateofbirth</th>
+      <th>Idno</th>
+      <th>Pinno</th>
+      <th>Designation</th>
+      <th>Jobgroup</th>
+      <th>Ministry</th>
+      <th>Department</th>
+      <th>Station</th>
+      <th>Address</th>
+      <th>Telephone</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Maritalstatus</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @morgages.each do |morgage| %>
+      <tr>
+        <td><%= morgage.Firstname %></td>
+        <td><%= morgage.Middlename %></td>
+        <td><%= morgage.Lastname %></td>
+        <td><%= morgage.Dateofbirth %></td>
+        <td><%= morgage.IDno %></td>
+        <td><%= morgage.Pinno %></td>
+        <td><%= morgage.Designation %></td>
+        <td><%= morgage.Jobgroup %></td>
+        <td><%= morgage.ministry %></td>
+        <td><%= morgage.department %></td>
+        <td><%= morgage.station %></td>
+        <td><%= morgage.Address %></td>
+        <td><%= morgage.Telephone %></td>
+        <td><%= morgage.Mobile %></td>
+        <td><%= morgage.Email %></td>
+        <td><%= morgage.Maritalstatus %></td>
+        <td><%= morgage.Amount %></td>
+        <td><%= link_to 'Show', morgage %></td>
+        <td><%= link_to 'Edit', edit_morgage_path(morgage) %></td>
+        <td><%= link_to 'Destroy', morgage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+  </div>
+<br>
+
+<%= link_to 'New Morgage', new_morgage_path %>

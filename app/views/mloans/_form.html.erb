@@ -1,0 +1,102 @@
+<%= form_with(model: mloan, local: true) do |form| %>
+  <% if mloan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mloan.errors.count, "error") %> prohibited this mloan from being saved:</h2>
+
+      <ul>
+        <% mloan.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Firstname %>
+    <%= form.text_area :Firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Middlename %>
+    <%= form.text_area :Middlename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lastname %>
+    <%= form.text_area :Lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Dateofbirth %>
+    <%= form.date_select :Dateofbirth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :IDno %>
+    <%= form.text_area :IDno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Pinno %>
+    <%= form.text_area :Pinno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Designation %>
+    <%= form.text_area :Designation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Jobgroup %>
+    <%= form.text_area :Jobgroup %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ministry %>
+    <%= form.text_area :ministry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_area :department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :station %>
+    <%= form.text_area :station %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Address %>
+    <%= form.text_area :Address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Telephone %>
+    <%= form.text_area :Telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mobile %>
+    <%= form.text_area :Mobile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :E-mail %>
+    <%= form.text_area :E-mail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Maritalstatus %>
+    <%= form.text_area :Maritalstatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Amount %>
+    <%= form.text_field :Amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

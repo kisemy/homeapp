@@ -1,0 +1,2 @@
+class Mloan < ApplicationRecord
+end

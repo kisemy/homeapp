@@ -1,0 +1,6 @@
+<% @morgages.each do |morgage| %>
+    <p><span class="activity-date"><%= date %></span></p>
+    <div class="flex-wrapper">
+      <%= render partial: 'morgages', collection: morgages, as: :morgage %>
+    </div>
+<% end %>

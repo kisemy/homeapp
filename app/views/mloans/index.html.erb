@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mloans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th>Lastname</th>
+      <th>Dateofbirth</th>
+      <th>Idno</th>
+      <th>Pinno</th>
+      <th>Designation</th>
+      <th>Jobgroup</th>
+      <th>Ministry</th>
+      <th>Department</th>
+      <th>Station</th>
+      <th>Address</th>
+      <th>Telephone</th>
+      <th>Mobile</th>
+      <th>E-mail</th>
+      <th>Maritalstatus</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mloans.each do |mloan| %>
+      <tr>
+        <td><%= mloan.Firstname %></td>
+        <td><%= mloan.Middlename %></td>
+        <td><%= mloan.Lastname %></td>
+        <td><%= mloan.Dateofbirth %></td>
+        <td><%= mloan.IDno %></td>
+        <td><%= mloan.Pinno %></td>
+        <td><%= mloan.Designation %></td>
+        <td><%= mloan.Jobgroup %></td>
+        <td><%= mloan.ministry %></td>
+        <td><%= mloan.department %></td>
+        <td><%= mloan.station %></td>
+        <td><%= mloan.Address %></td>
+        <td><%= mloan.Telephone %></td>
+        <td><%= mloan.Mobile %></td>
+        <td><%= mloan.E-mail %></td>
+        <td><%= mloan.Maritalstatus %></td>
+        <td><%= mloan.Amount %></td>
+        <td><%= link_to 'Show', mloan %></td>
+        <td><%= link_to 'Edit', edit_mloan_path(mloan) %></td>
+        <td><%= link_to 'Destroy', mloan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mloan', new_mloan_path %>

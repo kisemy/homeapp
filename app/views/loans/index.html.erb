@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Loans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th>Lastname</th>
+      <th>Dateofbirth</th>
+      <th>Idno</th>
+      <th>Pinno</th>
+      <th>Designation</th>
+      <th>Jobgroup</th>
+      <th>Ministry</th>
+      <th>Department</th>
+      <th>Station</th>
+      <th>Address</th>
+      <th>Telephone</th>
+      <th>Mobile</th>
+      <th>E-mail</th>
+      <th>Maritalstatus</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td><%= loan.Firstname %></td>
+        <td><%= loan.Middlename %></td>
+        <td><%= loan.Lastname %></td>
+        <td><%= loan.Dateofbirth %></td>
+        <td><%= loan.IDno %></td>
+        <td><%= loan.Pinno %></td>
+        <td><%= loan.Designation %></td>
+        <td><%= loan.Jobgroup %></td>
+        <td><%= loan.ministry %></td>
+        <td><%= loan.department %></td>
+        <td><%= loan.station %></td>
+        <td><%= loan.Address %></td>
+        <td><%= loan.Telephone %></td>
+        <td><%= loan.Mobile %></td>
+        <td><%= loan.E-mail %></td>
+        <td><%= loan.Maritalstatus %></td>
+        <td><%= loan.Amount %></td>
+        <td><%= link_to 'Show', loan %></td>
+        <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
+        <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Loan', new_loan_path %>

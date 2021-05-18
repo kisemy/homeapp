@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @glentry.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @glentry.description %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @glentry.amount %>
+</p>
+
+<%= link_to 'Edit', edit_glentry_path(@glentry) %> |
+<%= link_to 'Back', glentries_path %>

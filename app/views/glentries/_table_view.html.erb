@@ -1,0 +1,52 @@
+<% if @glentries.count > 0 %>
+  <div class="new-invoice-holder">
+    <div class="new-invoice-table-holder main-invoice page-box">
+      <table class="bordered grid-view">
+        <thead>
+        <tr>
+          <th class="align_center header align_center center-align not-sortable td-checkbox checkbox-item check_all_behaviour">
+            <div class="">
+              <div class="checkbox-item invoice_checkbox">
+                <%= check_box_tag 'select_all', 1, false, class: 'fix-left-and-opacity check_all filled-in checked-invoice hidden', title: 'Select All', id: 'select_all_items' %>
+                <label for="<%= "select_all_items" %>"></label>
+              </div>
+            </div>
+          </th>
+          <th width="15%">Description </th>
+        
+        <th scope="col">Description 2</th>
+        <th scope="col">Date</th>
+         <th scope="col">Amount</th>
+          
+        </tr>
+        </thead>
+        <tbody class="table-view-body">
+        <% @glentries.each do |glentry| %>
+          <tr class="invoice-card item-card client-card invoice-table-row items-table-row" data-invoice-url="<%= url_for(glentry) %>">
+            <td class="align_center header align_center center-align not-sortable td-checkbox checkbox-item invoice-row">
+              <div class="card-white-panel invoice-card invoice tabel-panel align_center center-align" data-glentry_id= <%=glentry.id %>>
+                <div class="checkbox-item invoice_checkbox">
+                  <%= check_box_tag "glentry_ids[]", glentry.id, false, :id => "glentry_#{glentry.id}", class: "filled-in checked-invoice" %>
+                  <label for="<%= "glentry_#{glentry.id}" %>"></label>
+                  <div class="invoice-name-initials invoice-name green-light <%= random_card_color %>"><%= glentry.description[0] %></div>
+                </div>
+              </div>
+              <%#= check_box_tag 'glentry_ids[]', glentry.id, false, :id => "glentry_#{glentry.id}", class: 'fix-left-and-opacity' %>
+            </td>
+            <td><strong><%= link_to glentry.description, glentry, remote: true, class: 'invoice_show_link' %></strong></td>
+            <td><%= glentry.description %></td>
+            <td><%= glentry.date %></td>
+            <td><%= glentry.amount %></td>
+           
+           
+            
+          
+       
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<% end %>

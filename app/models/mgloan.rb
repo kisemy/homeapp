@@ -1,0 +1,2 @@
+class Mgloan < ApplicationRecord
+end
